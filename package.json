@@ -1,0 +1,18 @@
+{
+  "name": "data-structure-and-algorithm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "phoneFormat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  },
+  "dependencies": {
+    "mocha-param": "^2.0.0"
+  }
+}
