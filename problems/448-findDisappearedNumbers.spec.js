@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-var findDisappearedNumbers = require('./findDisappearedNumbers');
+var findDisappearedNumbers = require('./448-findDisappearedNumbers');
 
 describe('findDisappearedNumbers', () => {
     const testCases = [

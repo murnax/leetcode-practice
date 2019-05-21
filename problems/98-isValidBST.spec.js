@@ -2,7 +2,7 @@ const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
 
-const isValidBST = require('./isValidBST');
+const isValidBST = require('./98-isValidBST');
 function TreeNode(val) {
     this.val = val;
     this.left = this.right = null;

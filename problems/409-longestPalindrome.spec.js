@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const longestPalindrome = require('./longestPalindrome');
+const longestPalindrome = require('./409-longestPalindrome');
 
 describe('longestPalindrome()', () => {
     it('longestPalindrome("abccccdd") should return 7', done => {

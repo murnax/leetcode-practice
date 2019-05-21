@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const rotateArray = require('./rotateArray');
+const rotateArray = require('./189-rotateArray');
 
 describe('rotateArray()', () => {
     const testCases = [

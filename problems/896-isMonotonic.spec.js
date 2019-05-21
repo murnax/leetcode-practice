@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const isMonotonic = require('./isMonotonic');
+const isMonotonic = require('./896-isMonotonic');
 
 describe('isMonotonic', () => {
     const testCases = [

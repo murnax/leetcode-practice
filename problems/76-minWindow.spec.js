@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const minWindow = require('./minWindow');
+const minWindow = require('./76-minWindow');
 
 describe('minWindow(s, t)', () => {
     const testCases = [

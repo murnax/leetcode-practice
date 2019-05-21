@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const isPalindrome = require('./isPalindrome');
+const isPalindrome = require('./125-isPalindrome');
 
 describe('isPalindrome', () => {
     const testCases = [

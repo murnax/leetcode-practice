@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const lengthOfLongestSubstring = require('./lengthOfLongestSubstring');
+const lengthOfLongestSubstring = require('./3-lengthOfLongestSubstring');
 
 describe('lengthOfLongestSubstring()', () => {
     const testCases = [

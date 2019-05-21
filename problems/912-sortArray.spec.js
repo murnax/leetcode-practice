@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const sortArray = require('./sortArray');
+const sortArray = require('./912-sortArray');
 
 describe('sortArray()', () => {
     const testCases = [
