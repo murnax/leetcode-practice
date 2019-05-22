@@ -13,10 +13,7 @@ var removeElement = function (nums, val) {
     }
     return i;
 };
-
-const a = [0, 1, 2, 2, 3, 0, 4, 2];
-let len = removeElement(a, 2);
-console.log('a', a.slice(0, len));
+module.exports = removeElement;
 
 /*
 

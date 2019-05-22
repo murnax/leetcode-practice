@@ -3,6 +3,18 @@
  * @return {number[]}
  */
 var plusOne = function (digits) {
+    for (let i = digits.length - 1; i >= 0; i--) {
+        if (digits[i] < 9) {
+            digits[i]++;
+            return digits;
+        }
+        digits[i] = 0;
+    }
+    return [1].concat(digits);
+};
+module.exports = plusOne;
+
+// var plusOne = function (digits) {
     // let carry = 0;
     // for (let i = digits.length - 1; i >= 0; i--) {
     //     if (i === (digits.length - 1)) {
@@ -27,8 +39,10 @@ var plusOne = function (digits) {
     //     return [].concat(1, ...digits);
     // }
     // return digits;
+// }
 
-    // Reverse
+// Reverse
+// var plusOne = function (digits) {    
     // digits = digits.reverse();
     // let hasCarry = false;
     // for (let [i, value] of digits.entries()) {
@@ -45,17 +59,4 @@ var plusOne = function (digits) {
     //     }
     // }
     // return hasCarry ? [].concat(1, ...digits.reverse()) : digits.reverse();
-
-    for (let i = digits.length - 1; i >= 0; i--) {
-        if (digits[i] < 9) {
-            digits[i]++;
-            return digits;
-        }
-        digits[i] = 0;
-    }
-    return [1].concat(digits);
-};
-
-console.log(plusOne([9]))
-console.log(plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]));
-console.log(plusOne([1, 9, 9]));
+// 
