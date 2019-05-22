@@ -8,13 +8,8 @@ var checkRecord = function (s) {
     for (let i = 0; i < s.length; i++) {
         let c = s[i];
         if (c === 'L') {
-            if (i === lastL + 1) {
-                if (++map['L'] > 2) {
-                    return false;
-                }
-            } else {
-                map['L'] = 1;
-            }
+            map['L'] = i === lastL + 1 ? ++map['L'] : 1;
+            if (map['L'] > 2) return false;
             lastL = i;
         } else {
             map[c] = ++map[c] || 1;
