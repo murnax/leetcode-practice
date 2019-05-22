@@ -27,7 +27,7 @@ describe('plusOne()', () => {
         }
     ];
 
-    itParam("nums = ${value.nums} should return ${value.result}", testCases, testCase => {
+    itParam("nums = ${value.digits} should return ${value.result}", testCases, testCase => {
         expect(plusOne(testCase.digits)).to.deep.equal(testCase.result);
     });
 });
