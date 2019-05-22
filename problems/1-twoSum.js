@@ -4,13 +4,15 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    let n = {};
+    // This map is used to store the diff value between target and nums[x],
+    // so next loop can check whether it's value is being looked for or not
+    let map = {};
     for (let i = 0; i < nums.length; i++) {
         let diff = `${target - nums[i]}`;
-        if (diff in n) {
-            return [n[diff], i];
+        if (diff in map) {
+            return [map[diff], i];
         }
-        n[nums[i]] = i;
+        map[nums[i]] = i;
     }
 };
 
