@@ -13,24 +13,18 @@
  * @return {boolean}
  */
 var hasCycle = function (head) {
-    // edge case
-    if (!head || !head.next) return false;
-
     // slow = tortoise, fast = hare
     let slow = head, fast = head;
 
-    while (true) {
-        if (fast) {
-            // The moment where fast and slow are pointing to the same
-            // object that where we know there is cycle in linked list.
-            // Because by moving fast 2 steps and move slow 1 step per iteration,
-            // there is no way these two pointers could meet if it's not cycle.
-            if ((fast = fast.next) === slow) return true;
-            if ((fast = fast.next) === slow) return true;
-            if (!fast || !fast.next) return false;
-            slow = slow.next;
-        } else {
-            return false;
-        }
+    // The moment where fast and slow are pointing to the same
+    // object that where we know there is cycle in linked list.
+    // Because by moving fast 2 steps and move slow 1 step per iteration,
+    // there is no way these two pointers could meet if it's not cycle.
+    while (fast) {
+        if ((fast = fast.next) === slow) return true;
+        if (fast && (fast = fast.next) === slow) return true;
+        if (!fast || !fast.next) return false;
+        slow = slow.next;
     }
+    return false;
 };
