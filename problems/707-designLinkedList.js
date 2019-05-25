@@ -20,7 +20,8 @@ var MyLinkedList = function () {
  * @return {number}
  */
 MyLinkedList.prototype.get = function (index) {
-    return this.getNode(index) && this.getNode(index).val;
+    const node = this.getNode(index);
+    return node !== null ? node.val : -1;
 };
 
 MyLinkedList.prototype.getNode = function (index) {
@@ -48,7 +49,6 @@ MyLinkedList.prototype.addAtHead = function (val) {
         this.head = node;
     }
     this.length++;
-    return this;
 };
 
 /**
@@ -65,8 +65,6 @@ MyLinkedList.prototype.addAtTail = function (val) {
         this.tail = node;
     }
     this.length++;
-    return this;
-
 };
 
 /**
@@ -76,16 +74,16 @@ MyLinkedList.prototype.addAtTail = function (val) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtIndex = function (index, val) {
-    if (index < 0 || index > this.length) return false;
-    if (index === this.length) return !!this.addAtTail(val);
-    if (index === 0) return !!this.addAtHead(val);
+    if (index < 0) index = 0;
+    if (index > this.length) return false;
+    if (index === this.length) return this.addAtTail(val);
+    if (index === 0) return this.addAtHead(val);
 
+    const node = new Node(val);
     const previousNode = this.getNode(index - 1);
-    const newNode = new Node(val);
-    newNode.next = previousNode.next;
-    previousNode.next = newNode;
+    node.next = previousNode.next;
+    previousNode.next = node;
     this.length++;
-    return true;
 };
 
 /**
@@ -94,45 +92,23 @@ MyLinkedList.prototype.addAtIndex = function (index, val) {
  * @return {void}
  */
 MyLinkedList.prototype.deleteAtIndex = function (index) {
-    if (index < 0 || index > this.length) return false;
+    console.log(index);
+    if (index < 0 || index >= this.length) return false;
 
-    if (index === this.length - 1 && index === 0) {
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
-        return;
-    } else if (index === this.length - 1) {
-        let newTail = this.get(index - 1);
-        newTail.next = null;
-        this.tail = newTail;
+    if (index === this.length - 1 && index !== 0) {
+        const nodeBeforeTail = this.getNode(index - 1);
+        nodeBeforeTail.next = null;
+        this.tail = nodeBeforeTail;
     } else if (index === 0) {
         this.head = this.head.next;
     } else {
-        let previousNode = this.getNode(index - 1);
-        let targetNode = this.getNode(index);
+        const previousNode = this.getNode(index - 1);
+        const targetNode = previousNode.next;
         previousNode.next = targetNode.next;
+    }
+
+    if (!this.head) {
+        this.tail = null;
     }
     this.length--;
 };
-
-MyLinkedList.prototype.pop = function () {
-
-}
-
-var obj = new MyLinkedList()
-obj.addAtHead(1)
-obj.deleteAtIndex(0);
-// obj.addAtTail(3)
-// obj.addAtIndex(1, 2)
-// obj.deleteAtIndex(1);
-console.log(obj);
-
-/**
- * Your MyLinkedList object will be instantiated and called as such:
- * var obj = new MyLinkedList()
- * var param_1 = obj.get(index)
- * obj.addAtHead(val)
- * obj.addAtTail(val)
- * obj.addAtIndex(index,val)
- * obj.deleteAtIndex(index)
- */
