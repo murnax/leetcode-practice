@@ -31,4 +31,4 @@ var removeOuterParentheses = function (S) {
     }
     return result.join('');
 };
-console.log(removeOuterParentheses("()()"));
+module.exports = removeOuterParentheses;
