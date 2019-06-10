@@ -15,6 +15,11 @@ describe('binarySearch', () => {
             nums: [-1, 0, 3, 5, 9, 12],
             target: 2,
             result: -1
+        },
+        {
+            nums: [-1, 0, 3, 5, 9, 12],
+            target: 0,
+            result: 1
         }
     ];
 

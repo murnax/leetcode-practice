@@ -5,14 +5,11 @@
  */
 var search = function (nums, target) {
     let leftPointer = 0, rightPointer = nums.length - 1;
-    while (leftPointer < rightPointer - 1) {
-
+    while (leftPointer <= rightPointer) {
         let middle = Math.floor((rightPointer - leftPointer) / 2) + leftPointer;
         if (nums[middle] === target) return middle;
-        if (nums[leftPointer] === target) return leftPointer;
-        if (nums[rightPointer] === target) return rightPointer;
-        if (nums[middle] < target) leftPointer = middle;
-        if (nums[middle] > target) rightPointer = middle;
+        if (nums[middle] < target) leftPointer = middle + 1;
+        if (nums[middle] > target) rightPointer = middle - 1;
     }
     return -1;
 };
