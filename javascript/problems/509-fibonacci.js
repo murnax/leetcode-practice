@@ -39,7 +39,6 @@ function fib(n) {
     for (let i = 3; i <= n; i++) {
         memo[i] = memo[i - 1] + memo[i - 2];
     }
-    console.log(memo)
     return memo[n];
 
     // https://leetcode.com/problems/fibonacci-number/discuss/223199/Java-O(2N)-greater-O(N)-greater-O(logN)
