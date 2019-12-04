@@ -11,6 +11,6 @@
  */
 var inorderTraversal = function(root) {
     if (!root) return [];
-    return [root.val, ...inorderTraversal(root.left), ...inorderTraversal(root.right)]
+    return [...inorderTraversal(root.left), root.val, ...inorderTraversal(root.right)]
 };
 module.exports = inorderTraversal;
