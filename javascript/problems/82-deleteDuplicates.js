@@ -16,22 +16,22 @@ var deleteDuplicates = function (head) {
 	let result = new ListNode(null);
 	let curr = result;
 	let next = head;
-	let next2 = next ? next.next : null;
+	let nextTwo = next ? next.next : null;
 	while (next) {
-		if (next.val !== next2.val) {
+		if (next.val !== nextTwo.val) {
 			curr = curr.next = new ListNode(next.val);
-			next2 = next2.next;
+			nextTwo = nextTwo.next;
 			next = next.next;
-		} else if (next.val === next2.val) {
+		} else if (next.val === nextTwo.val) {
 			do {
-				next2 = next2.next;
-			} while (next2 && next.val === next2.val);
-			if (!next2) break;
-			next = next2;
-			next2 = next2.next;
+				nextTwo = nextTwo.next;
+			} while (nextTwo && next.val === nextTwo.val);
+			if (!nextTwo) break;
+			next = nextTwo;
+			nextTwo = nextTwo.next;
 		}
 
-		if (!next2) {
+		if (!nextTwo) {
 			curr.next = new ListNode(next.val);
 			break;
 		}

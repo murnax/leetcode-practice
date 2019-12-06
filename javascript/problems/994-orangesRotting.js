@@ -5,40 +5,58 @@
 var orangesRotting = function (grid) {
 	let minute = 0;
 	let totalFreshOranges = 0;
-	let queue = [];
+
+	// this stack will contain [x,y] of the rotten oranges
+	// and will be used in while loop as a spreading point.
+	let rottenOranges = [];
 
 	for (let i = 0; i < grid.length; i++) {
 		for (let j = 0; j < grid[i].length; j++) {
+
+			// count fresh oranges
 			if (grid[i][j] === 1) totalFreshOranges++;
-			if (grid[i][j] === 2) queue.push([i, j]);
+
+			// find rotten oranges and push it into stack
+			if (grid[i][j] === 2) rottenOranges.push([i, j]);
 		}
 	}
 
-	while (totalFreshOranges > 0 && queue.length) {
-		let nextQueue = [];
-		while (queue.length) {
-			let [i, j] = queue.shift();
-			if (grid[i][j] === 2) {
-				rot(grid, i - 1, j) && nextQueue.push([i - 1, j]);
-				rot(grid, i + 1, j) && nextQueue.push([i + 1, j]);
-				rot(grid, i, j - 1) && nextQueue.push([i, j - 1]);
-				rot(grid, i, j + 1) && nextQueue.push([i, j + 1]);
-				grid[i][j] = -1;
+	// use for accessing adjacency grids.
+	const m = [[0, -1], [0, 1], [-1, 0], [1, 0],];
+
+	// keep spreading if there still fresh oranges left 
+	// and there still rotten orages left to be spread
+	while (totalFreshOranges && rottenOranges.length) {
+
+		// fresh oranges that is adjacent to the rotten oranges
+		//  will be pushed into this and will become rotten oranges!
+		let rottingOranges = [];
+
+		while (rottenOranges.length) {
+			let [x, y] = rottenOranges.pop();
+			for (let i = 0; i < 4; i++) {
+				let [x2, y2] = [x + m[i][0], y + m[i][1]];
+				
+				// if adjacency grid is fresh orange:
+				// make it rotten, decrease total fresh oranges
+				// and push it into stack that will be used for
+				// next round of speading.
+				if (grid[x2] && grid[x2][y2] === 1) {
+					grid[x2][y2] = 2;
+					totalFreshOranges--;
+					rottingOranges.push([x2, y2]);
+				}
 			}
 		}
-		queue = nextQueue;
+
+		// rotting oranges now became rotten oranges, 
+		// it will continue to spread until nothing left!
+		rottenOranges = rottingOranges;
+
 		minute++;
 	}
 
-	return totalFreshOranges > 0 ? -1 : minute;
-
-	function rot(grid, i, j) {
-		if (i >= 0 && i < grid.length && j >= 0 && j < grid[i].length && grid[i][j] === 1) {
-			grid[i][j] = 2;
-			totalFreshOranges--;
-			return true;
-		}
-		return false;
-	}
+	// if there is any fresh oranges left, return -1, otherwise, return minute;
+	return totalFreshOranges ? -1 : minute;
 };
 module.exports = orangesRotting;
