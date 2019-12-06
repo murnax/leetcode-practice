@@ -18,6 +18,11 @@ var deleteDuplicates = function (head) {
 	let next = head;
 	let nextTwo = next ? next.next : null;
 	while (next) {
+		if (!nextTwo) {
+			curr.next = new ListNode(next.val);
+			break;
+		}
+
 		if (next.val !== nextTwo.val) {
 			curr = curr.next = new ListNode(next.val);
 			nextTwo = nextTwo.next;
@@ -29,11 +34,6 @@ var deleteDuplicates = function (head) {
 			if (!nextTwo) break;
 			next = nextTwo;
 			nextTwo = nextTwo.next;
-		}
-
-		if (!nextTwo) {
-			curr.next = new ListNode(next.val);
-			break;
 		}
 	}
 	return result.next;

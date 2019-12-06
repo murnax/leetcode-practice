@@ -29,6 +29,10 @@ describe('deleteDuplicates()', () => {
 		{
 			head: [1, 1],
 			result: []
+		},
+		{
+			head: [1],
+			result: [1]
 		}
 	];
 
