@@ -30,5 +30,17 @@ var rob = function (nums, i = nums.length - 1) {
 	// return memo[nums.length];
 
 
+	// recursive
+	// if (i < 0) return 0;
+	// return Math.max(nums[i] + rob(nums, i - 2), rob(nums, i - 1));
+
+	// top-down
+	let memo = {};
+	function helper(i) {
+		if (memo[i]) return memo[i];
+		if (i < 0) return 0;
+		return memo[i] = Math.max(nums[i] + helper(i - 2), helper(i - 1));
+	}
+	return helper(nums.length - 1);
 };
 module.exports = rob;

@@ -43,12 +43,22 @@ var minCostClimbingStairs = function (A) {
 	// 	return result;
 	// }
 
-	let firstMin = A[0];
-	let secondMin = A[1];
-	for (let i = 2; i < A.length; i++) {
-		let currMin = A[i] + Math.min(firstMin, secondMin);
-		[firstMin, secondMin] = [secondMin, currMin];
+	// let firstMin = A[0];
+	// let secondMin = A[1];
+	// for (let i = 2; i < A.length; i++) {
+	// 	let currMin = A[i] + Math.min(firstMin, secondMin);
+	// 	[firstMin, secondMin] = [secondMin, currMin];
+	// }
+	// return Math.min(firstMin, secondMin);
+
+
+	// Recursive
+	// recurrence relation
+	function helper(i) {
+		if (i >= A.length) return 0;
+
+		return Math.min(A[i] + helper(i + 1), A[i] + helper(i + 2));
 	}
-	return Math.min(firstMin, secondMin);
+	return Math.min(helper(0), helper(1));
 };
 module.exports = minCostClimbingStairs;
