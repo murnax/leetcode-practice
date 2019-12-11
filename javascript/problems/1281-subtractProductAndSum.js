@@ -5,6 +5,8 @@
 var subtractProductAndSum = function(n) {
     let sum = 0;
     let product = 1;
+
+    // n will be mod until become 0
     while (n) {
         sum += n % 10;
         product *= n % 10;
