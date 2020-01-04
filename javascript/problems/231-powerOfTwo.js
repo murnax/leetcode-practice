@@ -1,0 +1,1 @@
+module.exports = n => n > 0 && !(n & (n - 1));
