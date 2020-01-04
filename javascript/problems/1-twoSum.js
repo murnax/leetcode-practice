@@ -6,13 +6,18 @@
 var twoSum = function (nums, target) {
     // This map is used to store the diff value between target and nums[x],
     // so next loop can check whether it's value is being looked for or not
-    let map = {};
+    let map = new Map();
     for (let i = 0; i < nums.length; i++) {
-        let diff = `${target - nums[i]}`;
-        if (diff in map) {
-            return [map[diff], i];
+
+        let diff = target - nums[i];
+
+        // if map has diff, can return the answer
+        if (map.has(diff)) {
+            return [map.get(diff), i];
         }
-        map[nums[i]] = i;
+
+        // set <nums[i], i> to map
+        map.set(nums[i], i);
     }
 };
 
