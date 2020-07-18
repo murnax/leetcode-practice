@@ -1,1 +1,8 @@
+# js
 javascript/node_modules
+
+#scala
+.metals
+scala/.bloop
+scala/.idea
+scala/.metals
