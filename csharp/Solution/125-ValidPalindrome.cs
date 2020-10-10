@@ -10,15 +10,11 @@ namespace Solution
     {
         public static bool Solution(string s)
         {
-            char[] chars = s.ToLower().ToCharArray().Where(validCharacter).ToArray();
+            char[] chars = s.ToLower().ToCharArray().Where(c => char.IsLetterOrDigit(c)).ToArray();
             int l = 0, r = chars.Length - 1;
-            while (l < r) if (chars[l++] != chars[r--]) return false;
+            while (l < r) 
+                if (chars[l++] != chars[r--]) return false;
             return true;
-        }
-
-        private static bool validCharacter(char c)
-        {
-            return new Regex(@"^[a-zA-Z0-9]*$").IsMatch(c.ToString());
         }
     }
 }
