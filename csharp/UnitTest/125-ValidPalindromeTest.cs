@@ -11,6 +11,7 @@ namespace UnitTest
         public void TestMethod(string s, bool output)
         {
             Assert.Equal(output, ValidPalindrome.Solution(s));
+            Assert.Equal(output, ValidPalindrome.SolutionB(s));
         }
     }
 }
