@@ -1,4 +1,4 @@
-﻿using Leetcode;
+﻿using Solution;
 using Xunit;
 
 namespace UnitTest
@@ -13,6 +13,7 @@ namespace UnitTest
         public void TestMethod(string s, int output)
         {
             Assert.Equal(output, LongestSubstringWithoutRepeatingCharacter.Solution(s));
+            Assert.Equal(output, LongestSubstringWithoutRepeatingCharacter.SolutionB(s));
         }
     }
 }

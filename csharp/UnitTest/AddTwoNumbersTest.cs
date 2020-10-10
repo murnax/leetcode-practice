@@ -1,9 +1,9 @@
-﻿using Leetcode;
+﻿using Solution;
 using Leetcode.Utils;
 using System.Collections.Generic;
 using Xunit;
 
-namespace LeetcodeTest
+namespace UnitTest
 {
     public class AddTwoNumbersTest
     {

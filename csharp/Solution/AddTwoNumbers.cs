@@ -1,5 +1,5 @@
 ﻿using Leetcode.Utils;
-namespace Leetcode
+namespace Solution
 {
     public class AddTwoNumbers
     {

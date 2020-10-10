@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Leetcode
+namespace Solution
 {
     public class LongestSubstringWithoutRepeatingCharacter
     {
@@ -34,6 +34,27 @@ namespace Leetcode
                 }
             }
             return result;
+        }
+
+        // https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/383202/A-simple-hashset-based-O(n)-solution
+        public static int SolutionB(string s)
+        {
+            int i = 0, j = 0, max = 0;
+            HashSet<char> set = new HashSet<char>();
+
+            while (i < s.Length)
+            {
+                if (!set.Contains(s[i]))
+                {
+                    set.Add(s[i++]);
+                    max = Math.Max(max, set.Count);
+                }
+                else
+                {
+                    set.Remove(s[j++]);
+                }
+            }
+            return max;
         }
     }
 }

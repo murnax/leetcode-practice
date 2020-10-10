@@ -1,7 +1,7 @@
-﻿using Leetcode;
+﻿using Solution;
 using Xunit;
 
-namespace LeetcodeTest
+namespace UnitTest
 {
     public class TwoSumTest
     {
