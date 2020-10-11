@@ -1,4 +1,4 @@
-﻿namespace Leetcode.Utils
+﻿namespace Solution.Utils
 {
     public class ListNode<T>
     {

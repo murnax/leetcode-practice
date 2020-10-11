@@ -1,5 +1,5 @@
 ﻿using Solution;
-using Leetcode.Utils;
+using Solution.Utils;
 using System.Collections.Generic;
 using Xunit;
 
