@@ -2,5 +2,6 @@
 
 Practicing data structure and algorithm with Leetcode questions.
 
-Note:
-- Many of them I get solution from the discussion forum, including optimized solution if I can only do naive approach.
+| Problem No.                                        | Solution(s) | Tags |
+|----------------------------------------------------|-------------|------|
+| [1 Two sum](https://leetcode.com/problems/two-sum) |       [js](./javascript/problems/1-twoSum.js) [scala](./scala/src/main/scala/TwoSum.scala) [c#](./csharp/Solution/1-TwoSum.cs)      |   Map   |
