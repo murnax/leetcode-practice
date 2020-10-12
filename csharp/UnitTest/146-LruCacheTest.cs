@@ -10,7 +10,7 @@ namespace UnitTest
     {
         [Theory]
         [MemberData(nameof(Data))]
-        public void TestMethod(LruCache lruCache)
+        public void TestMethod(ILruCache lruCache)
         {
             lruCache.Put(1, 1);
             lruCache.Put(2, 2);
@@ -32,6 +32,10 @@ namespace UnitTest
                     new object[]
                     {
                         new LruCache(2),
+                    },
+                    new object[]
+                    {
+                        new LruCache2(2),
                     }
                 };
             }
