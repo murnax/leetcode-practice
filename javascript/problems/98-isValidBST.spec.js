@@ -1,22 +1,22 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const { convertArrayToBinaryTree } = require('../helper/treeNode');
+require('../helper/treeNode');
 
 const isValidBST = require('./98-isValidBST');
 
 describe('isValidBST()', () => {
     const testCases = [
         {
-            root: convertArrayToBinaryTree([2, 1, 3]),
+            root: [2, 1, 3].toBinaryTree(),
             result: true
         },
         {
-            root: convertArrayToBinaryTree([5, 1, 4, null, null, 3, 6]),
+            root: [5, 1, 4, null, null, 3, 6].toBinaryTree(),
             result: false
         },
         {
-            root: convertArrayToBinaryTree([10, 5, 15, 6, 20]),
+            root: [10, 5, 15, 6, 20].toBinaryTree(),
             result: false
         }
     ];

@@ -1,26 +1,26 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const { convertArrayToBinaryTree } = require('../helper/treeNode');
+require('../helper/treeNode');
 
 const inorderTraversal = require('./94-binary-tree-inorder-traversal');
 
 describe('in order traversal', () => {
     const testCases = [
         {
-            root: convertArrayToBinaryTree([1, null, 2, null, null, 3]),
+            root: [1, null, 2, null, null, 3].toBinaryTree(),
             result: [1, 3, 2]
         },
         {
-            root: convertArrayToBinaryTree([]),
+            root: [].toBinaryTree(),
             result: []
         },
         {
-            root: convertArrayToBinaryTree([1, 2]),
+            root: [1, 2].toBinaryTree(),
             result: [2, 1]
         },
         {
-            root: convertArrayToBinaryTree([1, null, 2]),
+            root: [1, null, 2].toBinaryTree(),
             result: [1, 2]
         }
     ];
