@@ -7,3 +7,5 @@ Practicing data structure and algorithm with Leetcode questions.
 | [#1 Two Sum](https://leetcode.com/problems/two-sum) |       [`js`](./javascript/problems/1-twoSum.js) [`scala`](./scala/src/main/scala/TwoSum.scala) [`c#`](./csharp/Solution/1-TwoSum.cs)      |   `Map`   |
 | [#2 Add Two Numbers](https://leetcode.com/problems/add-two-numbers) |       [`js`](./javascript/problems/2-addTwoNumbers.js) [`c#`](./csharp/Solution/2-AddTwoNumbers.cs)      |   `Linked List`   |
 | [#3 Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) |       [`js`](./javascript/problems/3-lengthOfLongestSubstring.js) [`c#`](./csharp/Solution/3-LongestSubstringWithoutRepeatingCharacter.cs)     |   `Map` `Two Pointers` `Sliding Window`   |
+| [#5 Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring) | [`js`](./javascript/problems/5-longestPalindromicSubstring.js) | `Two Pointers` |
+| [#155 Min Stack](https://leetcode.com/problems/min-stack/) | [`js`](./javascript/problems/155-minStack.js) [`c#`](./csharp/Solution/155-MinStack.cs) | `Stack` `Linked List` |
