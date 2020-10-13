@@ -3,27 +3,30 @@ class ListNode {
 		this.val = val;
 		this.next = null;
 	}
+
+	toArray() {
+		let node = this;
+		const result = [];
+		while (node) {
+			result.push(node.val);
+			node = node.next;
+		}
+		return result;
+	}
+
+	toString() {
+		return this.toArray().join('->');
+	}
 }
 
-function arrayToLinkedList(arr) {
+Array.prototype.toLinkedList = function() {
 	let dummy = new ListNode(null);
-	let curr = dummy;
-	for (let elem of arr) {
-		curr.next = new ListNode(elem);
-		curr = curr.next;
+	let current = dummy;
+	for (let elem of this) {
+		current.next = new ListNode(elem);
+		current = current.next;
 	}
 	return dummy.next;
 }
 
-function linkedListToArray(node) {
-	let result = [];
-	while (node) {
-		result.push(node.val);
-		node = node.next;
-	}
-	return result;
-}
-
 exports.ListNode = ListNode;
-exports.arrayToLinkedList = arrayToLinkedList;
-exports.linkedListToArray = linkedListToArray;
