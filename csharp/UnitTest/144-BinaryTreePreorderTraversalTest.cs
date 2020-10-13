@@ -14,6 +14,13 @@ namespace UnitTest
             Assert.Equal(output, BinaryTreePreorderTraversalIterative.Solution(root));
         }
 
+        [Theory]
+        [MemberData(nameof(Data))]
+        public static void TestMethod_RecursiveApproache(TreeNode<int> root, List<int> output)
+        {
+            Assert.Equal(output, BinaryTreePreorderTraversalRecursive.Solution(root));
+        }
+
         public static IEnumerable<object[]> Data
         {
             get

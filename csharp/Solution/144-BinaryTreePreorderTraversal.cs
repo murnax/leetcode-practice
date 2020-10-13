@@ -22,4 +22,23 @@ namespace Solution
             return result;
         }
     }
+
+    public class BinaryTreePreorderTraversalRecursive
+    {
+        public static List<int> Solution(TreeNode<int> root)
+        {
+            return Preorder(root, new List<int>());
+        }
+
+        private static List<int> Preorder(TreeNode<int> root, List<int> nodes)
+        {
+            if (root == null) return nodes;
+
+            nodes.Add(root.Val);
+            if (root.Left != null) Preorder(root.Left, nodes);
+            if (root.Right != null) Preorder(root.Right, nodes);
+
+            return nodes;
+        }
+    }
 }
