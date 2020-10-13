@@ -22,7 +22,7 @@ namespace Solution.Utils
             throw new Exception("input is not a valid list");
         }
 
-        public static List<int> ToList(this ListNode<int> node) 
+        public static List<int> ToList(this ListNode<int> node)
         {
             var list = new List<int>();
             while (node != null)
@@ -31,6 +31,23 @@ namespace Solution.Utils
                 node = node.Next;
             }
             return list;
+        }
+
+        public static TreeNode<int> ToTreeNode(this List<int?> list)
+        {
+            return CreateTreeNode(list, 1);
+        }
+
+        private static TreeNode<int> CreateTreeNode(List<int?> list, int index)
+        {
+            if (index > list.Count) return null;
+            int? val = list[index - 1];
+            if (val == null) return null;
+
+            TreeNode<int> node = new TreeNode<int>((int)val);
+            node.Left = CreateTreeNode(list, index * 2);
+            node.Right = CreateTreeNode(list, index * 2 + 1);
+            return node;
         }
     }
 }
