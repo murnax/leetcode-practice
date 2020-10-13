@@ -3,8 +3,6 @@ function TreeNode(val) {
     this.left = this.right= null;
 };
 
-
-
 function convertArrayToBinaryTree(array, index = 1) {
     if (index > array.length) return null;
 
