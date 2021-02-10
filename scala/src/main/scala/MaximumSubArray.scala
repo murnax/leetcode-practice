@@ -1,6 +1,6 @@
 package leetcode
 
-object MaximumSubArray extends App {
+object MaximumSubArray {
   // https://leetcode.com/problems/maximum-subarray/discuss/194212/Scala-Solution
   // def maxSubArray(nums: Array[Int]): Int = {
   //   var result = nums(0)

@@ -2,7 +2,7 @@ package leetcode
 
 import scala.annotation.tailrec
 
-object ContainerWithMostWater extends App {
+object ContainerWithMostWater {
   def maxArea(height: Array[Int]): Int = {
 //    var i = 0
 //    var j = height.length - 1

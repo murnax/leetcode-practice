@@ -1,6 +1,6 @@
 package leetcode
 
-object TwoSum extends App {
+object TwoSum {
   def twoSum(nums: Array[Int], target: Int): Array[Int] = {
     var map:Map[Int, Int] = Map()
     for (i <- 0 to nums.length) {

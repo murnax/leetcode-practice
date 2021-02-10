@@ -1,6 +1,6 @@
 package leetcode
 
-object UniqueOccurrences extends App {
+object UniqueOccurrences {
   def uniqueOccurrences(arr: Array[Int]): Boolean = {
     val counter = arr.toList.groupBy(i=>i).mapValues(_.size)
     var map = scala.collection.mutable.Map[Int, Int]()

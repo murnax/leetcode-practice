@@ -2,7 +2,7 @@ package leetcode
 
 import scala.util.chaining._
 
-object MergeInterval extends App {
+object MergeInterval {
   def merge(intervals: Array[Array[Int]]): Array[Array[Int]] = {
     // recursion
     def doMerge(x: List[Array[Int]]): List[Array[Int]] = x match {

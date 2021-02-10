@@ -1,6 +1,6 @@
 package leetcode
 
-object SortedSquares extends App {
+object SortedSquares {
   def sortedSquares(A: Array[Int]): Array[Int] = {
     val result = new Array[Int](A.length)
     var n = A.length - 1

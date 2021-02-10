@@ -1,7 +1,7 @@
 package leetcode
 import scala.collection.mutable.{ListBuffer, Map}
 
-object FindCommonCharacters extends App {
+object FindCommonCharacters {
 //  def solution(A: Array[String]): List[String] = {
 //    var maps = A.map(word => {
 //      var map = Map[Char, Int]()

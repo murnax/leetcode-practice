@@ -1,6 +1,6 @@
 package leetcode
 
-object ValidParentheses extends App {
+object ValidParentheses {
   def isValid(s: String): Boolean = {
     def valid(s: List[Char], stack: List[Char]): Boolean =
       (s, stack) match {

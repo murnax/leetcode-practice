@@ -1,6 +1,6 @@
 package leetcode
 
-object LengthOfLongestSubString extends App {
+object LengthOfLongestSubString {
   def lengthOfLongestSubString(s: String): Int = {
     var max = 0
     var chars = Map[Char, Int]()
