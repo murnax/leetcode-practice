@@ -30,3 +30,5 @@ build
 
 #general
 *.class
+
+.vscode
