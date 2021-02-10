@@ -1,7 +1,13 @@
-name := "scala"
+import Dependencies._
 
-version := "0.1"
-
-scalaVersion := "2.13.1"
-
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % "test"
+lazy val root = (project in file(".")).
+  settings(
+    inThisBuild(List(
+      organization := "org.codecraftlabs",
+      scalaVersion := "2.13.1",
+      version      := "1.0.21.0"
+    )),
+    name := "leetcode-scala",
+    libraryDependencies += scalaTest % Test,
+    libraryDependencies += scalacticTest % Test
+  )
