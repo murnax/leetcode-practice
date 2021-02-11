@@ -6,7 +6,7 @@ object ValidParentheses {
       (s, stack) match {
         case (Nil, Nil) => true
         case (x::xs, _) if "[{(".contains(x) => valid(xs, x::stack)
-        case (x::xs, r::rs) if "]})".contains(x) == "[{(".contains(r) => valid(xs, rs)
+        case (x::xs, r::rs) if "]})".indexOf(x) == "[{(".indexOf(r) => valid(xs, rs)
         case _ => false
       }
     valid(s.toList, Nil)
