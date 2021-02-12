@@ -14,3 +14,4 @@ Practicing data structure and algorithm with Leetcode questions.
 | [#144 Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal) | [`js`](./javascript/problems/144-binary-tree-preorder-traversal.js) [`c#`](./csharp/Solution/144-BinaryTreePreorderTraversal.cs) | `Binary Tree` `Stack` `Recursion` |
 | [#146 LRU Cache](https://leetcode.com/problems/lru-cache/) | [`js`](./javascript/problems/146-LRUCache.js) [`scala`](./scala/src/main/scala/LruCache.scala) [`c#`](./csharp/Solution/146-LruCache.cs) | `Map` `Linked List` |
 | [#155 Min Stack](https://leetcode.com/problems/min-stack/) | [`js`](./javascript/problems/155-minStack.js) [`c#`](./csharp/Solution/155-MinStack.cs) | `Stack` `Linked List` |
+| [#1480 Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/) | [`scala`](./scala/main/../src/main/scala/RunningSumOf1dArray.scala) [`c#`](./csharp/Solution/1480-RunningSumOf1dArray.cs) | `Array` |
