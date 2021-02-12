@@ -5,9 +5,3 @@
 ```
 yarn test
 ```
-
-### 2. Run a specific test
-```
-# sbt "testOnly *{ClassName}
-sbt "testOnly *BestTimeToSellAndBuyStockTest"
-```
