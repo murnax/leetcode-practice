@@ -13,12 +13,12 @@ namespace UnitTest
             Assert.Equal(output, LongestPalindromicSubstring.Solution(s));
         }
 
-        [Theory]
-        [MemberData(nameof(Data))]
-        public void TestMethod_BottomUpDp(string s, string output)
-        {
-            Assert.Equal(output, LongestPalindromicSubstring.SolutionWithBottomUpDp(s));
-        }
+        // [Theory]
+        // [MemberData(nameof(Data))]
+        // public void TestMethod_BottomUpDp(string s, string output)
+        // {
+        //     Assert.Equal(output, LongestPalindromicSubstring.SolutionWithBottomUpDp(s));
+        // }
 
         public static IEnumerable<object[]> Data
         {

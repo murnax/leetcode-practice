@@ -36,6 +36,3 @@ var validPalindrome = function (s) {
 // }
 
 module.exports = validPalindrome;
-
-// console.log(validPalindrome("aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga"));
-// console.log(validPalindrome("lcupuupucul"));

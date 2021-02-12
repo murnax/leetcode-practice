@@ -7,7 +7,6 @@ var isHappy = function (n) {
     let result = 0;
     while (result !== 1) {
         result = n = n.toString().split('').map(n => Number(n) ** 2).reduce((a, b) => a + b, 0);
-        console.log(result);
         if (result in hashAnswer) {
             return false;
         } else {
@@ -16,4 +15,3 @@ var isHappy = function (n) {
     }
     return true;
 };
-console.log(isHappy(2));

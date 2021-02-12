@@ -15,5 +15,3 @@ var isValid = function (s) {
     }
     return !openBracketsStack.length ? true : false;
 };
-console.log(isValid("()[]{}"))
-

@@ -9,6 +9,3 @@ var bitwiseComplement = function (N) {
     }
     return (2 ** i - 1) - N;
 };
-
-
-console.log(bitwiseComplement(1));

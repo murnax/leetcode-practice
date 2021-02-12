@@ -19,11 +19,6 @@ var dominantIndex = function (nums) {
 
             // secondLargestIndex = secondLargestIndex !== null ? nums[secondLargestIndex] > nums[i] ? secondLargestIndex : i : i;
         }
-        console.log(`${i} round: `, '1st:', largestIndex, '\t2nd:', secondLargestIndex);
     }
     return nums[largestIndex] >= nums[secondLargestIndex] * 2 ? largestIndex : -1;
 };
-
-// console.log(dominantIndex([3, 6, 1, 0]));
-console.log(dominantIndex([1, 0, 4, 2]));
-// console.log(dominantIndex([2, 0, 3, 0]));

@@ -97,11 +97,9 @@ module.exports = findAnagrams;
 //         for (let j of subString) {
 //             subStringCounter[j] = ++subStringCounter[j] || 1;
 //         }
-//         // console.log(pCounter, subStringCounter);
 //         if (Object.keys(pCounter).length === Object.keys(subStringCounter).length) {
 //             let valid = true;
 //             for (let k of Object.keys(subStringCounter)) {
-//                 // console.log(k);
 //                 if (subStringCounter[k] !== pCounter[k]) {
 //                     valid = false;
 //                 }

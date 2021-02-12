@@ -29,7 +29,6 @@ var merge = function (nums1, m, nums2, n) {
 
 let nums1 = [1, 2, 3, 0, 0, 0];
 merge(nums1, 3, [2, 5, 6], 3);
-console.log(nums1);
 
 /*
       |        |

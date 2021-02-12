@@ -17,4 +17,3 @@ module.exports = removeDuplicates;
 
 const a = [1, 1, 2];
 removeDuplicates(a);
-// console.log(a);

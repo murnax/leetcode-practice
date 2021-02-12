@@ -16,4 +16,3 @@ var hammingDistance = function (x, y) {
     return totalBitDifferent;
 };
 const output = hammingDistance(3, 1);
-console.log(output);

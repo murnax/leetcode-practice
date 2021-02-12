@@ -52,5 +52,3 @@ list.next.next = new ListNode(2);
 list.next.next.next = new ListNode(1);
 // list.next.next.next.next = new ListNode(5);
 // list.next.next.next.next.next = new ListNode(6);
-console.log(removeElements(list, 2));
-// console.log(list);

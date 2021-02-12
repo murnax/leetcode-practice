@@ -20,6 +20,7 @@ var islandPerimeter = function (grid) {
     }
     return Object.values(hash).reduce((a, b) => a + b, 0);
 };
+
 console.log(islandPerimeter(
     [
         [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],

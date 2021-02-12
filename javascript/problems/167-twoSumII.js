@@ -37,5 +37,3 @@ var twoSum = function (numbers, target) {
     }
     return [i + 1, j + 1];
 };
-
-console.log(twoSum([5, 25, 75], 100));

@@ -13,4 +13,3 @@ function sortArrayByParityII(A) {
     }
     return result;
 }
-console.log(sortArrayByParityII([4, 2, 5, 7]));

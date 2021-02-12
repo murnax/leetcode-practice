@@ -20,11 +20,6 @@ var largestTimeFromDigits = function(A) {
         highestHour = o.length ? Math.max(...o) : 0
         digits = String(highestHour).split('').map(n => parseInt(n))
     }
-    console.log(digits)
     A.splice(A.indexOf(digits[0]) === -1, 1)
-    console.log(A)
     A.splice(A.indexOf(digits[1]) === -1, 1)
-    console.log(A)
 };
-
-console.log(largestTimeFromDigits([2,2,9,3]))

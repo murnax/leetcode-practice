@@ -21,5 +21,3 @@ var commonChars = function (A) {
     }
     return result;
 };
-
-console.log(commonChars(["bella", "label", "roller"]));

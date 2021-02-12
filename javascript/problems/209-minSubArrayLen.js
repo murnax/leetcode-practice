@@ -23,8 +23,3 @@ var minSubArrayLen = function (s, nums) {
     }
     return result;
 };
-// console.log(minSubArrayLen(7, [2, 3, 1, 2, 4, 3]));
-// console.log(minSubArrayLen(4, [1, 4, 4]));
-// console.log(minSubArrayLen(11, [1, 2, 3, 4, 5]));
-// console.log(minSubArrayLen(15, [5, 1, 3, 5, 10, 7, 4, 9, 2, 8]));
-console.log(minSubArrayLen(3, [1, 1]));

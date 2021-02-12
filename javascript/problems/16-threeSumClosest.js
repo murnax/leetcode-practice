@@ -6,7 +6,6 @@
 var threeSumClosest = function(nums, target) {
     // two pointer 
     nums = nums.sort((a, b) => a - b);
-    console.log(nums, )
 
     // naive approach
     // time complexity: n^3

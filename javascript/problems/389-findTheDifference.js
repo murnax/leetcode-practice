@@ -18,7 +18,4 @@ var findTheDifference = function (s, t) {
             counter[j] = --counter[j];
         }
     }
-    console.log(counter);
 };
-console.log(findTheDifference("abcd", "abcde"));
-console.log(findTheDifference("a", "aa"));

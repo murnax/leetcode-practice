@@ -35,7 +35,3 @@ var singleNumber = nums => {
 
 // Math
 var singleNumber = nums => 2 * [...new Set(nums)].reduce((a, b) => a + b, 0) - nums.reduce((a, b) => a + b, 0)
-
-
-
-console.log(singleNumber([2,2,1,1,5]))

@@ -55,15 +55,3 @@ var backspaceCompare = function (S, T) {
     }
     return true;
 };
-
-console.log(backspaceCompare("ab#c", "ad#c"));
-
-/*
-
-   |
-ab#c
-
-ad#c
-   |
-
-*/

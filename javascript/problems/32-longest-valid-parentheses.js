@@ -10,7 +10,6 @@ var longestValidParentheses = function (s) {
         ['(', '[', '{'].indexOf(n) !== -1 && openBracketsStack.push(n);
 
         if ([')', ']', '}'].indexOf(n) !== -1) {
-            console.log(n);
             if (n === ')' && openBracketsStack.pop() !== '(') {
                 r = 0;
             } else if (n === ']' && openBracketsStack.pop() !== '[') {
@@ -23,10 +22,5 @@ var longestValidParentheses = function (s) {
         }
         result = Math.max(result, r);
     }
-    console.log(r);
     return result;
 };
-
-// console.log(longestValidParentheses("(()"));
-// console.log(longestValidParentheses(")()())"));
-console.log(longestValidParentheses("()(()"));

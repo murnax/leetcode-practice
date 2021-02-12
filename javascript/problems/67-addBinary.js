@@ -15,12 +15,3 @@ var addBinary = function (a, b) {
     }
     return carry ? `${carry}${result}` : result;
 };
-
-console.log(addBinary("11101", "100"));
-
-/*
-
- 11101
-   100
-100001
-*/

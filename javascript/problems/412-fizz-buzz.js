@@ -19,5 +19,3 @@ const fizzBuzz = function(n) {
     
     return output
 };
-
-console.log(fizzBuzz(15))

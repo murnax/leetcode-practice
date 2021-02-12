@@ -11,5 +11,3 @@ var repeatedNTimes = function(A) {
         }
     }
 };
-
-console.log(repeatedNTimes([1,2,3,3]))

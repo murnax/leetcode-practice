@@ -23,5 +23,3 @@ var intersection = function (nums1, nums2) {
     }
     return result;
 };
-console.log(intersection([1, 2, 2, 1], [2, 2]));
-
