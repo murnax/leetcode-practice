@@ -1,30 +1,30 @@
-# Data structure
+## Data structure
 
-## Array
+### Array
 
-### Create array of integer
+#### Create array of integer
 ```
 val numbers = Array(1, 2, 3, 4, 5)
 ```
 
-### Get lenght of array
+#### Get lenght of array
 ```
 numbers.length // 5
 ```
 
-### Access array element by index
+#### Access array element by index
 ```
-numbers(2) # 3
+numbers(2) // 3
 ```
 
-### Concat arrays
+#### Concat arrays
 ```
 val arrayA = Array(1, 2, 3)
 val arrayB = Array(4, 5)
 val arrayC = arrayA.concat(arrayB) // Array(1, 2, 3, 4, 5)
 ```
 
-### Loop through all elements in array
+#### Loop through all elements in array
 ```
 val numbers = Array(1, 2, 3, 4, 5)
 for (i <- numbers) {
@@ -39,9 +39,9 @@ for (i <- 0 to (numbers.length - 1)) {
 
 ```
 
-## List
+### List
 
-### Create list of integer
+#### Create list of integer
 ```
 val numbers = List(1, 2, 3, 4, 5)
 
@@ -49,29 +49,29 @@ val numbers = List(1, 2, 3, 4, 5)
 val numbers = 1 :: (2 :: (3 :: (4 :: (5 :: Nil))))
 ```
 
-### Get length of list
+#### Get length of list
 ```
-numbers.length # 5
+numbers.length // 5
 ```
 
-### Check if list contains a given value
+#### Check if list contains a given value
 ```
 numbers.contains(1) // true
 numbers.contains(0) // false
 numbers.contains(5) // false
 ```
 
-### Get list's head
+#### Get list's head
 ```
 numbers.head // 1
 ```
 
-### Get list's tail (every elements except head)
+#### Get list's tail (every elements except head)
 ```
 numbers.tail // List(2, 3, 4, 5)
 ```
 
-### Concat lists
+#### Concat lists
 ```
 val listA = List(1, 2, 3, 4, 5)
 val listB = List(6, 7, 8, 9, 10)
@@ -80,7 +80,7 @@ val list = listA.:::listB // or
 val list = List.concat(listA, ListB)
 ```
 
-## Set
+### Set
 
 ```
 // Create set of integer
@@ -96,29 +96,35 @@ numbers(5) // false
 ```
 
 
-# Functional combinators
+## Functional combinators
 
-## map
+### map
 ```
 val numbers = List(1, 2, 3, 4, 5)
 numbers.map(i => i * 2) // List(2, 4, 6, 8, 10)
 numbers.map(_ * 2) // shorthand with same result as above 
 ```
 
-## filter
+### filter
 ```
 val numbers = List(1, 2, 3, 4, 5)
 numbers.filter(_ % 2 == 0) // List(2, 4)
 ```
 
-## zip
+### zip
 ```
 var numbers = List(1, 2, 3, 4)
 var chars = List("a", "b", "c", "d")
 numbers.zip(chars) // List[(Int, String)]((1, "a"), (2, "b"), (3, "c"), (4, "d"))
 ```
 
-## partition
+### zipWithIndex
+```
+var numbers = List(1, 2, 3, 1)
+numbers.zipWithIndex() // List[(Int, Int)]((1, 0), (2, 1), (3, 2), (1, 3))
+```
+
+### partition
 ```
 var numbers = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 numbers.partition(_ % 2 == 0) // (List[Int], List[Int])(List(2, 4, 6, 8, 10), List(1, 3, 5, 7, 9))
