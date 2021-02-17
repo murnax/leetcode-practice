@@ -136,6 +136,14 @@ var numbers = List(1, 2, 3, 1)
 numbers.zipWithIndex() // List[(Int, Int)]((1, 0), (2, 1), (3, 2), (1, 3))
 ```
 
+### zipAll
+```
+val a = List("a", "b", "c", "d")
+val b = List(1, 2, 3)
+a.zipAll(b, "*", 99) // List((a, 1), (b, 2), (c, 3), (d, 99))
+b.zipAll(a, "*", 99) // List((1, a), (2, b), (3, c), (99, d))
+```
+
 ### partition
 ```
 var numbers = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -150,4 +158,12 @@ val nums = List(1, 2, 3, 4, 5)
 nums.zipWithIndex.map{ 
     case(s, i) => println(s, i)
 }
+```
+
+### Frequency count
+```
+val nums = List(1, 2, 3, 1, 1, 3)
+nums.groupBy(identity).map{case(k, v) => (k, v.size)} // MapView[Int, Int](1 -> 3, 2 -> 1, 3 -> 2)
+// or
+nums.groupBy(identity).view.mapValues(_.size) // MapView[Int, Int](1 -> 3, 2 -> 1, 3 -> 2)
 ```
