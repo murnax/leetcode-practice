@@ -16,3 +16,7 @@ object LengthOfLongestSubString {
   }
 }
 
+object LengthOfLongestSubString2 {
+  def lengthOfLongestSubString(s: String): Int = 
+    s.scanLeft("")((s: String, y: Char) => s.substring(1 + s.indexOf(y)) + y).map(_.length).reduce(Math.max)
+}
