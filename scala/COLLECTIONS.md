@@ -95,6 +95,25 @@ numbers(0) // false
 numbers(5) // false
 ```
 
+### Map
+
+#### Create map
+```
+val map = Map(1 -> "a", 2 -> "b", 3 -> "c)
+// Map[Int, String](1 -> "a", 2 -> "b", 3 -> "c)
+```
+
+#### Add element to map (which returns new map)
+```
+val map = Map(1 -> "a", 2 -> "b", 3 -> "c")
+ map + (4 -> "d")
+// Map[Int, String](1 -> "a", 2 -> "b", 3 -> "c)
+
+// mutable map
+val map = scala.collection.mutable.Map(1 -> "a", 2 -> "b", 3 -> "c")
+map -= 2
+// Map[Int, String](1 -> "a", 3 -> "c")
+```
 
 ## Functional combinators
 
@@ -105,10 +124,30 @@ numbers.map(i => i * 2) // List(2, 4, 6, 8, 10)
 numbers.map(_ * 2) // shorthand with same result as above 
 ```
 
+### forAll
+```
+val nums = List(3, 6, 9, 12)
+nums.forall(_ % 3 == 0) // true
+```
+
 ### filter
 ```
 val numbers = List(1, 2, 3, 4, 5)
 numbers.filter(_ % 2 == 0) // List(2, 4)
+```
+
+### count
+```
+val numbers = List(5, 12, 9, 3, 43)
+numbers.count(_ > 10) // <-- 12 and 43
+//equivalent to
+numbers.filter(_ > 10).size
+```
+
+### group
+```
+val a = (1 to 10).toList
+a.grouped(2) // <- List(List(1, 2), List(3, 4), List(5, 6), List(7, 8), List(9, 10))
 ```
 
 ### zip

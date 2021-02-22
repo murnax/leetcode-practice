@@ -10,3 +10,11 @@ object SpiralMatrix {
         snail(matrix.toList.map(_.toList))
     }
 }
+
+object SpiralMatrix2 {
+    def spiralOrder(matrix: Array[Array[Int]]): List[Int] = spiralOrder(matrix.toList.map(_.toList), List.empty)
+    def spiralOrder(matrix: List[List[Int]], result: List[Int]): List[Int] = matrix match {
+        case Nil => result
+        case _ => spiralOrder(matrix.drop(1).transpose.reverse, result ::: matrix(0))
+    }
+}
