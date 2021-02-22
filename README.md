@@ -12,6 +12,7 @@ Practicing data structure and algorithm with Leetcode questions.
 | [#36 Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | [`js`](./javascript/problems/36-validSudoku.js) | `Map` |
 | [#54 Spiral Matrix](https://leetcode.com/problems/spiral-matrix//) | [`js`](./javascript/problems/54-spiralMatrix.jss) [scala](./scala/src/main/scala/SpiralMatrix.scala) | `Recursion` |
 | [#94 Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | [`js`](./javascript/problems/94-binary-tree-inorder-traversal.js) [`c#`](./csharp/Solution/94-BinaryTreeInorderTraversal.cs) | `Binary Tree` `Stack` `Recursion` |
+| [#118 Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/) | [`js`](./javascript/problems/118-pascalTriangle.js) [`scala`](./scala/src/main/scala/PascalTriagle.scala) | `Array` `Recursion` |
 | [#144 Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal) | [`js`](./javascript/problems/144-binary-tree-preorder-traversal.js) [`c#`](./csharp/Solution/144-BinaryTreePreorderTraversal.cs) | `Binary Tree` `Stack` `Recursion` |
 | [#146 LRU Cache](https://leetcode.com/problems/lru-cache/) | [`js`](./javascript/problems/146-LRUCache.js) [`scala`](./scala/src/main/scala/LruCache.scala) [`c#`](./csharp/Solution/146-LruCache.cs) | `Map` `Linked List` |
 | [#155 Min Stack](https://leetcode.com/problems/min-stack/) | [`js`](./javascript/problems/155-minStack.js) [`c#`](./csharp/Solution/155-MinStack.cs) | `Stack` `Linked List` |
