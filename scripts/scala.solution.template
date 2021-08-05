@@ -1,3 +1,6 @@
+// Problem ID: %id%
+// URL: %url%
+
 package leetcode
 
 object %problemName% {
