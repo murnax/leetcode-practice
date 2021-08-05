@@ -34,6 +34,7 @@ Function Create-Boilerplate{
             Move-Item -Path ".\$($problemName)Test.scala" -Destination "..\scala\src\test\scala"
         }
     }
+    write-host "--- Boilerplate files have been creatd for $language"  -ForegroundColor green
 }
 
 Function Replace-Placeholder{
