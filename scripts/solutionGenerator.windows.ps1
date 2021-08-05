@@ -1,3 +1,4 @@
+ls
 param ([int] $id, $name)
 # Set-Variable -Name "leetCodeProblemUrl" -Value "https://leetcode.com/problems/$name/"
 $leetCodeProblemUrl = "https://leetcode.com/problems/$name/"
@@ -9,7 +10,11 @@ $problemName = (Get-Culture).TextInfo.ToTitleCase($name) -replace '[^a-zA-Z0-9]'
 # Javascript
 Copy-Item ".\javascript.solution.template" -Destination ".\$problemName.js"
 Copy-Item ".\javascript.test.template" -Destination ".\$problemName.spec.js"
-((Get-Content -path ".\$problemName.spec.js" -Raw) -replace '%problemName%', $problemName) | Set-Content -Path ".\$problemName.spec.js"
+(Get-Content -path ".\$problemName.spec.js" -Raw) | Foreach-Object {
+    $_ -replace '%problemName%', $problemName `
+        -replace '%id%', $id `
+        -replace '%url%', $leetCodeProblemUrl
+} | Set-Content -Path ".\$problemName.spec.js"
 Move-Item -Path ".\$problemName.js" -Destination "..\javascript\src"
 Move-Item -Path ".\$problemName.spec.js" -Destination "..\javascript\src"
 
