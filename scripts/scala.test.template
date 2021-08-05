@@ -1,8 +1,17 @@
 import org.scalatest.FunSuite
+import org.scalatest.prop.TableDrivenPropertyChecks._
+
 import leetcode.%problemName%
 
 class %problemName%Test extends FunSuite {
-    test("%problemName%") {
-        
+    val testCases = Table(
+        ("param1", "result"),
+        ("", "")
+    )
+
+    testCases.foreach{ i =>
+        test(s"f(${i._1}) should equal to ${i._2}") {
+            assert(%problemName%.solution(i._1) === i._2)
+        }
     }
 }
