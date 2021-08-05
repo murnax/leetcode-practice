@@ -1,3 +1,6 @@
+const chai = require('chai');
+const expect = chai.expect;
+const itParam = require('mocha-param');
 const { solution } = require('./%problemName%');
 
 describe('%problemName%', () => {
@@ -8,7 +11,7 @@ describe('%problemName%', () => {
         },
     ];
 
-    itParam("", testCases, t => {
+    itParam("f(${value.param1}) should equal ${value.result}", testCases, t => {
         expect(solution(t.param1)).to.equal(t.result);
     });
 });
