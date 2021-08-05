@@ -1,0 +1,14 @@
+const { solution } = require('./%problemName%');
+
+describe('%problemName%', () => {
+    const testCases = [
+        {
+            param1: "",
+            result: "",
+        },
+    ];
+
+    itParam("", testCases, t => {
+        expect(solution(t.param1)).to.equal(t.result);
+    });
+});

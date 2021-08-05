@@ -1,0 +1,7 @@
+const solution = function() {
+
+}
+
+module.exports = {
+    solution,
+};

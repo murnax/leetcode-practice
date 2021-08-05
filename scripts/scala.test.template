@@ -1,0 +1,8 @@
+import org.scalatest.FunSuite
+import leetcode.%problemName%
+
+class %problemName%Test extends FunSuite {
+    test("%problemName%") {
+        
+    }
+}
