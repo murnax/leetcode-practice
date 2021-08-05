@@ -1,0 +1,12 @@
+using System.Collections.Generic;
+
+namespace Solution
+{
+    public class %problemName%
+    {
+        public static void Solution()
+        {
+
+        }
+    }
+}

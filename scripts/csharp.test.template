@@ -1,0 +1,15 @@
+using Solution;
+using Xunit;
+
+namespace UnitTest
+{
+    public class %problemName%Test
+    {
+        [Theory]
+        [InlineData("", "")]
+        public void TestMethod(string param1, string expect)
+        {
+            Assert.Equal(expect, %problemName%.Solution(param1));
+        }
+    }
+}
