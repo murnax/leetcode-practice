@@ -11,3 +11,4 @@ scala/.metals
 
 # python
 python/env
+python/src/__pycache__/
