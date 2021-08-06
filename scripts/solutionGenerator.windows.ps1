@@ -1,5 +1,7 @@
 Param ([int] $id, $name, [String[]] $languages)
 
+$
+
 $SCALA = "scala"
 $JAVASCRIPT = "javascript"
 $CSHARP = "csharp"
@@ -77,14 +79,6 @@ write-host "Generating template for problem id: $id, name: $name"
 
 $problemName = (Get-Culture).TextInfo.ToTitleCase($name) -replace '[^a-zA-Z0-9]', ''
 
-if ( $languages.Contains($JAVASCRIPT)) {
-    Create-Boilerplate $JAVASCRIPT
-}
-
-if ( $languages.Contains($CSHARP)) {
-    Create-Boilerplate $CSHARP
-}
-
-if ( $languages.Contains($SCALA)) {
-    Create-Boilerplate $SCALA
+foreach ($language in $languages) {
+    Create-Boilerplate $language
 }
