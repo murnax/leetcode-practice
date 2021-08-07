@@ -67,13 +67,13 @@ function Check-UrlValidity($_URL) {
 $leetCodeProblemUrl = "https://leetcode.com/problems/$name/"
 
 if ( $languages.Length -eq 0 ) {
-    write-host "'language' param is not defined, boilerplate code will be generated for all of the following languages: $SUPPORTED_LANGUAGES`n" -ForegroundColor yellow
+    write-host "'languages' param is not defined, boilerplate code will be generated for all of the following languages: $SUPPORTED_LANGUAGES`n" -ForegroundColor yellow
     $languages = $SUPPORTED_LANGUAGES
 }
 
 Check-UrlValidity $leetCodeProblemUrl
 
-write-host "Generating template for problem id: $id, name: $name"
+write-host "Generating boilerplace for problem id: $id, name: $name"
 
 $problemName = (Get-Culture).TextInfo.ToTitleCase($name) -replace '[^a-zA-Z0-9]', ''
 
