@@ -3,8 +3,12 @@
 # js
 javascript/node_modules
 
-#scala
+# scala
 .metals
 scala/.bloop
 scala/.idea
 scala/.metals
+
+# python
+python/env
+python/src/__pycache__/
