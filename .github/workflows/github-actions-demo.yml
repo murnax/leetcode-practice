@@ -3,6 +3,8 @@ on: [push]
 jobs:
   unit-test-javascript:
     runs-on: ubuntu-latest
+    env:
+      working-diretory: ./javascript
     steps:
       - name: Check out code
         uses: actions/checkout@v2
