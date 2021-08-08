@@ -1,4 +1,4 @@
-name: Unit test
+name: CI
 on: [push]
 jobs:
   unit-test-javascript:

@@ -34,3 +34,5 @@ RUN \
   sbt sbtVersion
 
 COPY . .
+
+CMD ["sbt", "test"]
