@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const xorQueries = require('./5304-xorQueries');
+const xorQueries = require('./5304-XORQueries');
 
 describe('xorQueries', () => {
     const testCases = [
