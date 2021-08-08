@@ -25,3 +25,15 @@ jobs:
         run: docker build -t leetcode-scala:latest .
       - name: Run test
         run: docker run --rm leetcode-scala:latest
+  unit-test-python:
+    runs-on: unbunto-latest
+    defaults:
+      run:
+        working-directory: ./python
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build python docker image
+        run: docker build -t leetcode-python:latest .
+      - name: Run test
+        run: docker run --rm leetcode-python:latest
