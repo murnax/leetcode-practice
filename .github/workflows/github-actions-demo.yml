@@ -1,12 +1,12 @@
-name: learn-github-actions
+name: Unit test
 on: [push]
 jobs:
-  check-bats-version:
+  unit-test-javascript:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Build javascript docker images
+        run: docker build -t leetcode-javascript:latest .
+      - name: Run test
+        run: docker run --rm leetcode-javascript:latest
