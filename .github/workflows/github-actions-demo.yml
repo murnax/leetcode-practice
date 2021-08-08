@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        wooking-directory: ./javascript
+        working-directory: ./javascript
     steps:
       - name: Check out code
         uses: actions/checkout@v2
