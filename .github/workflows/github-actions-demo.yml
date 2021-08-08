@@ -3,10 +3,13 @@ on: [push]
 jobs:
   unit-test-javascript:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        wroking-directory: ./javascript
     steps:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Build javascript docker images
-        run: docker build -t leetcode-javascript:latest -f ./javascript/Dockerfile .
+        run: docker build -t leetcode-javascript:latest .
       - name: Run test
         run: docker run --rm leetcode-javascript:latest
