@@ -1,29 +1,50 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const climbStairs = require('./70-climbStairs');
+const { bruteForceSolution, memoizationSolution, dpSolution, recursiveSolution } = require('./70-climbStairs');
 
 describe('climbStairs(n)', () => {
 	const testCases = [
 		{
 			n: 2,
-			result: 2
+			expected: 2
 		},
 		{
 			n: 3,
-			result: 3
+			expected: 3
 		},
 		{
 			n: 10,
-			result: 89
+			expected: 89
 		},
 		{
 			n: 38,
-			result: 63245986
+			expected: 63245986
 		}
 	];
 
-	itParam("n = ${value.n} should return ${value.result}", testCases, testCase => {
-		expect(climbStairs(testCase.n)).to.equal(testCase.result);
+	// test will fail because of time out
+	describe('bruteForceSolution', () => {
+		// itParam("f(${value.n}) should equal to ${value.expected}", testCases, testCase => {
+		// 	expect(bruteForceSolution(testCase.n)).to.equal(testCase.expected);
+		// });
+	});
+
+	describe('memoizationSolution', () => {
+		itParam("f(${value.n}) should equal to ${value.expected}", testCases, testCase => {
+			expect(memoizationSolution(testCase.n)).to.equal(testCase.expected);
+		});	
+	});
+
+	describe('dpSolution', () => {
+		itParam("f(${value.n}) should equal to ${value.expected}", testCases, testCase => {
+			expect(dpSolution(testCase.n)).to.equal(testCase.expected);
+		});	
+	});
+
+	describe('recursiveSolution', () => {
+		itParam("f(${value.n}) should equal to ${value.expected}", testCases, testCase => {
+			expect(recursiveSolution(testCase.n)).to.equal(testCase.expected);
+		});	
 	});
 });

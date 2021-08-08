@@ -57,7 +57,7 @@ describe('update(n)', () => {
         }
     ];
 
-    itParam("input = ${value.input} should return ${value.result}", testCases, testCase => {
-        expect(update(testCase.input)).to.deep.equal(testCase.result);
-    });
+    // itParam("input = ${value.input} should return ${value.result}", testCases, testCase => {
+    //     expect(update(testCase.input)).to.deep.equal(testCase.result);
+    // });
 });
