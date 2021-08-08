@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const surroundedRegions = require('./130-surroundedRegions');
+const { solution } = require('./SurroundedRegions');
 
 describe('surroundedRegions', () => {
     const testCases = [
@@ -36,7 +36,7 @@ describe('surroundedRegions', () => {
     ];
 
     itParam("should update board correctly", testCases, testCase => {
-        surroundedRegions(testCase.board);
+        solution(testCase.board);
         expect(testCase.board).to.deep.equal(testCase.updatedBoard);
     });
 });

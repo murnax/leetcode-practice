@@ -24,8 +24,8 @@ describe('removeDulicatesFromSortedArray()', () => {
 		// }
 	];
 
-	itParam("nums = ${value.nums} should return ${value.result}", testCases, testCase => {
-		expect(removeDulicatesFromSortedArray(testCase.nums)).to.equal(testCase.result);
-		expect(testCase.nums).to.deep.equal(testCase.updatedNums);
-	});
+	// itParam("nums = ${value.nums} should return ${value.result}", testCases, testCase => {
+	// 	expect(removeDulicatesFromSortedArray(testCase.nums)).to.equal(testCase.result);
+	// 	expect(testCase.nums).to.deep.equal(testCase.updatedNums);
+	// });
 });
