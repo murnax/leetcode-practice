@@ -34,7 +34,7 @@ object AddTwoNumbers2 {
 object AddTwoNumbers3 {
     import ListNode.{listNodeToList, listToListNode}
 
-    def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = addTwoNumbers(l1, l2, 0)
+    def addTwoNumbers(l1: ListNode, l2: ListNode): List[Int] = addTwoNumbers(l1, l2, 0)
     def addTwoNumbers(l1: List[Int], l2: List[Int], c: Int): List[Int] = (l1, l2, c) match {
         case (Nil, Nil, 0) => Nil
         case (Nil, Nil, _) => List(c)
