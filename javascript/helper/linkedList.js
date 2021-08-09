@@ -1,7 +1,7 @@
 class ListNode {
-	constructor(val) {
+	constructor(val, next) {
 		this.val = val;
-		this.next = null;
+		this.next = next;
 	}
 
 	toArray() {
