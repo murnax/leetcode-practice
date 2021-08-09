@@ -32,8 +32,14 @@ object AddTwoNumbers2 {
 }
 
 object AddTwoNumbers3 {
-    def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = addTwoNumbers(l1, l2, 0)
-    def addTwoNumbers(l1: ListNode, l2: ListNode, c: Int): ListNode = (l1, l2, c) match {
-        case (null, null, _) => new ListNode(c)
+    import ListNode.{listNodeToList, listToListNode}
+
+    def addTwoNumbers(l1: ListNode, l2: ListNode): List[Int] = addTwoNumbers(l1, l2, 0)
+    def addTwoNumbers(l1: List[Int], l2: List[Int], c: Int): List[Int] = (l1, l2, c) match {
+        case (Nil, Nil, 0) => Nil
+        case (Nil, Nil, _) => List(c)
+        case (h1::t1, Nil, _) => (h1 + c) % 10 :: addTwoNumbers(t1, Nil, (h1 + c) / 10)
+        case (Nil, h2::t2, _) => (h2 + c) % 10 :: addTwoNumbers(Nil, t2, (h2 + c) % 10)
+        case (h1::t1, h2::t2, _) => (h1 + h2 + c) % 10 :: addTwoNumbers(t1, t2, (h1 + h2 + c) / 10)
     }
 }

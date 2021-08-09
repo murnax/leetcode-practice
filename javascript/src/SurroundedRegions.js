@@ -1,8 +1,11 @@
+// problem id: 130
+// url: https://leetcode.com/problems/surrounded-regions/
+
 /**
  * @param {character[][]} board
  * @return {void} Do not return anything, modify board in-place instead.
  */
-var solve = function (board) {
+var solution = function (board) {
     let visitedIslands = {};
 
     for (let i = 0; i < board.length; i++) {
@@ -26,6 +29,7 @@ var solve = function (board) {
             subIslands.push([i, j]);
 
             if (i === 0 || i >= board.length - 1 || j === 0 || j >= board[i].length - 1) surrounded = false;
+
             if (i > 0) h(i - 1, j);
             if (i < board.length - 1) h(i + 1, j);
             if (j > 0) h(i, j - 1);
@@ -38,4 +42,6 @@ var solve = function (board) {
         return subIslands;
     }
 };
-module.exports = solve;
+module.exports = {
+    solution,
+};

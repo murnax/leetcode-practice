@@ -3,7 +3,7 @@
  * @param {number} k
  * @return {number[]}
  */
-var topKFrequent = function (nums, k) {
+var solution = function (nums, k) {
     const result = [];
     const queue = new PriorityQueue();
     const map = nums.reduce((a, b) => { a[b] = ++a[b] || 1; return a; }, {});
@@ -16,6 +16,9 @@ var topKFrequent = function (nums, k) {
         result.push(+queue.dequeue().value);
     }
     return result;
+};
+module.exports = {
+    solution,
 };
 
 class PriorityQueue {

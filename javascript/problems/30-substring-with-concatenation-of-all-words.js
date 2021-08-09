@@ -4,43 +4,38 @@
  * @return {number[]}
 */
 var findSubstring = function (s, words) {
-	let result = [];
-	if (!words.length) return result;
-
-	let map = words.reduce((a, b) => { a[b] = ++a[b] || 1; return a; }, {});
-	let referenceMap = Object.assign({}, map);
-	let wordSize = words[0].length;
-	let windowSize = wordSize * words.length;
-	let counter = Object.keys(map).length;
-	let begin = 0;
-	let end = 0;
-
-	if (s.length < windowSize) return result;
-
-	for (let i = 0; i < wordSize; i++) {
-		begin = end = i;
-		map = referenceMap;
-		counter = Object.keys(map).length;
-
-		while (end + wordSize - 1 < s.length) {
-			let lastWord = s.substr(end, wordSize);
-
-			lastWord in map && --map[lastWord] === 0 && --counter;
-
-			if (end + wordSize - begin === windowSize) {
-				if (counter === 0) result.push(begin);
-
-				let firstWord = s.substr(begin, wordSize);
-
-				firstWord in map && ++map[firstWord] > 0 && ++counter;
-
-				begin += wordSize;
-			}
-
-			end += wordSize;
-		}
-	}
-
-	return result;
+	if (!words.length) return [];
+    
+    let map = words.reduce((a, b) => { a[b] = ++a[b] || 1; return a; }, {});
+    let counter = Object.keys(map).length;
+    let wordLen = words[0].length;
+    
+    if (s.length < words.length * wordLen) return [];
+    
+    let begin = 0, end = 0, lastEnd = 0;
+    let result = [];
+    
+    while (end < s.length) {
+        let endWord = s.substr(end, wordLen);
+        
+        if (endWord in map) {
+            --map[endWord] === 0 && --counter;              
+            end += wordLen;
+        } else {
+            end = ++begin;
+            map = words.reduce((a, b) => { a[b] = ++a[b] || 1; return a; }, {});
+            counter = Object.keys(map).length;
+        }
+        
+        while (counter === 0) {
+            if (end - begin === words.length * wordLen) {
+                result.push(begin);
+            }
+            map = words.reduce((a, b) => { a[b] = ++a[b] || 1; return a; }, {});
+            counter = Object.keys(map).length;
+            end = ++begin;
+        }
+    }
+    return result;
 };
 module.exports = findSubstring;

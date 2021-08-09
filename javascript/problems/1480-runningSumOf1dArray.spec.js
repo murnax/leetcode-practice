@@ -12,6 +12,6 @@ describe('runningSum', () => {
     ];
 
     itParam("nums = ${value.nums} should return ${value.result}", testCases, testCase => {
-        expect(runningSum(testCase.nums)).to.equal(testCase.result);
+        expect(runningSum(testCase.nums)).to.deep.equal(testCase.result);
     });
 });

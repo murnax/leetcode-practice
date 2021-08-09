@@ -7,20 +7,20 @@ describe('subsets()', () => {
     const testCases = [
         {
             nums: [1, 2, 3],
-            result: [[
-                [3],
-                [1],
-                [2],
-                [1, 2, 3],
-                [1, 3],
-                [2, 3],
-                [1, 2],
-                []
-            ]]
+            expected: [
+                [],       [ 1 ],
+                [ 1, 2 ], [ 1, 2, 3 ],
+                [ 1, 3 ], [ 2 ],
+                [ 2, 3 ], [ 3 ]
+            ]
         }
     ];
 
-    itParam("nums = ${value.nums} should return ${value.result}", testCases, testCase => {
-        expect(subsets(testCase.nums)).to.deep.equal(testCase.result);
+    itParam("nums = ${value.nums} should return ${value.expected}", testCases, testCase => {
+        const actual = subsets(testCase.nums);
+        expect(actual.length).to.equal(testCase.expected.length)
+        for(let i = 0; i < actual.length; i++) {
+            expect(actual[i]).to.have.members(testCase.expected[i])
+        }
     });
 });

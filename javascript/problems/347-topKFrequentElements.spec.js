@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const topKFrequentElements = require('./347-topKFrequentElements');
+const { solution } = require('./347-topKFrequentElements');
 
 describe('topKFrequentElements', () => {
 
@@ -19,6 +19,6 @@ describe('topKFrequentElements', () => {
     ];
 
     itParam("s = ${value.s} should return ${value.result}", testCases, testCase => {
-        expect(topKFrequentElements(testCase.nums, testCase.k)).to.deep.equal(testCase.result);
+        expect(solution(testCase.nums, testCase.k)).to.deep.equal(testCase.result);
     });
 });

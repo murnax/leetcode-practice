@@ -4,8 +4,9 @@
  * @return {number[]}
  */
 module.exports = function (arr, queries) {
-    let result = Array(arr.length);
-    for (let i = 1; i < arr.length; i++) {
-        arr[i] ^= arr[i - 1];
+    let result = [];
+    for (let query of queries) {
+        result.push(arr.slice(query[0], query[1] + 1).reduce((a, b) => a ^ b, 0));
     }
+    return result;
 };

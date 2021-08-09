@@ -1,0 +1,39 @@
+name: CI
+on: [push]
+jobs:
+  unit-test-javascript:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./javascript
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Build javascript docker image
+        run: docker build -t leetcode-javascript:latest .
+      - name: Run test
+        run: docker run --rm leetcode-javascript:latest
+  unit-test-scala:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scala
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Build scala docker image
+        run: docker build -t leetcode-scala:latest .
+      - name: Run test
+        run: docker run --rm leetcode-scala:latest
+  unit-test-python:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./python
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build python docker image
+        run: docker build -t leetcode-python:latest .
+      - name: Run test
+        run: docker run --rm leetcode-python:latest
