@@ -5,7 +5,7 @@ import leetcode.%problemName%
 
 class %problemName%Test extends FunSuite {
     val testCases = Table(
-        ("param1", "result"),
+        ("param1", "expected"),
         ("", "")
     )
 

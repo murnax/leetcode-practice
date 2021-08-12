@@ -7,11 +7,11 @@ describe('%problemName%', () => {
     const testCases = [
         {
             param1: "",
-            result: "",
+            expected: "",
         },
     ];
 
-    itParam("f(${value.param1}) should equal ${value.result}", testCases, t => {
-        expect(solution(t.param1)).to.equal(t.result);
+    itParam("f(${value.param1}) should equal ${value.expected}", testCases, t => {
+        expect(solution(t.param1)).to.equal(t.expected);
     });
 });

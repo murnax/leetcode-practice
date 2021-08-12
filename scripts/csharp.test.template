@@ -7,7 +7,7 @@ namespace UnitTest
     {
         [Theory]
         [InlineData("", "")]
-        public void TestMethod(string param1, string expect)
+        public void TestMethod(string param1, string expected)
         {
             Assert.Equal(expect, %problemName%.Solution(param1));
         }
