@@ -1,7 +1,5 @@
 Param ([int] $id, $name, [String[]] $languages)
 
-$
-
 $SCALA = "scala"
 $JAVASCRIPT = "javascript"
 $CSHARP = "csharp"
@@ -65,6 +63,16 @@ function Check-UrlValidity($_URL) {
 }
 
 # -----------------------------------------------------------
+
+if ( $id -eq 0) {
+    write-host "$id is invalid problem ID"
+    exit 1
+}
+
+if ( -Not $name ) {
+    write-host "Problem name can not be empty"
+    exit 1
+}
 
 $leetCodeProblemUrl = "https://leetcode.com/problems/$name/"
 
