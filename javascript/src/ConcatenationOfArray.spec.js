@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const itParam = require('mocha-param');
-const { solution } = require('./ConcatenationOfArray');
+const { reduceSolution, forEachSolution } = require('./ConcatenationOfArray');
 
 describe('ConcatenationOfArray', () => {
     const testCases = [
@@ -16,6 +16,10 @@ describe('ConcatenationOfArray', () => {
     ];
 
     itParam("f([${value.nums}]) should equal [${value.expected}]", testCases, t => {
-        expect(solution(t.nums)).to.deep.equal(t.expected);
+        expect(reduceSolution(t.nums)).to.deep.equal(t.expected);
+    });
+
+    itParam("f2([${value.nums}]) should equal [${value.expected}]", testCases, t => {
+        expect(forEachSolution(t.nums)).to.deep.equal(t.expected);
     });
 });
