@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha $(find ./problems ./src -name ${NO:-*}*.spec.js)"
+    "test": "mocha $(find ./problems ./src -name ${NO:-*}*.spec.js)",
+    "test:dev": "mocha"
   },
   "author": "",
   "license": "ISC",
