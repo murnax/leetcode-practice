@@ -21,10 +21,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-      - name: Build scala docker image
-        run: docker build -t leetcode-scala:latest .
-      - name: Run test
-        run: docker run --rm leetcode-scala:latest
+      - name: Run tests
+        run: sbt coverage test
   unit-test-python:
     runs-on: ubuntu-latest
     defaults:
