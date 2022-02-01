@@ -40,6 +40,6 @@ jobs:
         working-directory: ./csharp
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2      
       - name: Run tests
-        run: dotnet test --no-restore --verbosity normal
+        run: dotnet test
