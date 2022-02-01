@@ -22,7 +22,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Run tests
-        run: sbt coverage test
+        run: sbt test
   unit-test-python:
     runs-on: ubuntu-latest
     defaults:
