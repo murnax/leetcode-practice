@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Run test
         run: docker-compose up
-  unit-test-csharp
+  unit-test-csharp:
     runs-on: ubuntu-latest
     defaults:
       run:
