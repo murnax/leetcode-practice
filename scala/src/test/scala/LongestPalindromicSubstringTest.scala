@@ -4,7 +4,10 @@ import org.scalatest.prop.TableDrivenPropertyChecks._
 import leetcode.LongestPalindromicSubstring
 
 class LongestPalindromicSubstringTest extends FunSuite {
-  val testCases = Table(("s", "expected"), ("babad", "bab"), ("cbbd", "bb"))
+  val testCases = Table(
+    ("s", "s"), 
+    ("babad", "bab"), 
+    ("cbbd", "bb"))
 
   testCases.foreach { i =>
     test(s"f(${i._1}) should equal to ${i._2}") {
