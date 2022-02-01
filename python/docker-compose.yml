@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  python_unit_test:
+    image: python:3
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    command: "python3 -m unittest discover -s src -p '*_test.py'"

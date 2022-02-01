@@ -33,7 +33,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Build python docker image
-        run: docker build -t leetcode-python:latest .
       - name: Run test
-        run: docker run --rm leetcode-python:latest
+        run: docker-compose up
+        
