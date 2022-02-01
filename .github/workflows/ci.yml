@@ -33,4 +33,13 @@ jobs:
         uses: actions/checkout@v2
       - name: Run test
         run: docker-compose up
-        
+  unit-test-csharp
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./csharp
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run tests
+        run: dotnet test --no-restore --verbosity normal
