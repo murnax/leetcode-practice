@@ -7,6 +7,8 @@ PYTHON="python"
 SUPPORTED_LANGUAGES=($SCALA $JAVASCRIPT $CSHARP)
 
 RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLLOW='\033[1;33m'
 NC='\033[0m'
 
 validateParameters()
@@ -16,18 +18,21 @@ validateParameters()
     if test -z "$id" 
     then
         echo "${RED}Param id is required${NC}"
+        showExample
         exit 1
     fi
 
     if test -z "$name"
     then 
         echo "${RED}Param name is required${NC}"
+        showExample
         exit 1
     fi
 }
 
 validateLeetcodeUrl() 
 {
+    echo "\nValidating Leetcode URL..."
     response=$(curl --head --write-out %{http_code} --silent --output /dev/null "$1")
     if [[ $response -ne 200 ]]; then
         echo "${RED}$leetcodeProblemUrl is not a valid Leetcode URL"
@@ -45,7 +50,7 @@ createBoilerplate() {
     local problemName=$3
     local url=$4
 
-    echo "Creating boilerplate for ${language}..."
+    echo "\nCreating boilerplate for ${language}..."
     replacePattern="s,%id%,${id},g; s,%problemName%,${problemName},g; s,%url%,${url},g;"
     case $language in
         $SCALA)
@@ -72,6 +77,12 @@ createBoilerplate() {
             exit 1
             ;;
     esac    
+    echo "${GREEN}--- Boilerplate files have been creatd for $language${NC}"
+}
+
+showExample() 
+{
+    echo "--- Example: sh boilerplateGenerator.sh --id 5 --name longest-palindromic-substring --languages javascriptsss"
 }
 
 #----------------------------------------------------
@@ -84,25 +95,31 @@ while [ $# -gt 0 ]; do
     shift
 done
 
+validateParameters $id $name
+
 if [[ ${#languages[@]} -eq 0 ]]; then
-    echo "'languages' param is not defined, boilerplate code will be generated for all of the following languages: ${SUPPORTED_LANGUAGES[@]}\n"
+    echo "${YELLLOW}'languages' param is not defined, boilerplate code will be generated for all of the following languages: ${SUPPORTED_LANGUAGES[@]}${NC}"
+    read -p "(Confirm) Y or N " -n 1 -r
+    if ! [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        exit 0
+    fi
+    echo ""
     languages=${SUPPORTED_LANGUAGES[@]}
 fi
 
-validateParameters $id $name
 
 leetcodeProblemUrl="https://leetcode.com/problems/$name/"
 validateLeetcodeUrl $leetcodeProblemUrl
 
-
 problemName=$(toTitleCase $name)
-echo "Problem name: ${problemName}\n"
+echo "\nProblem name: ${problemName}"
 
 languages=(${languages//,/ })
 for language in ${languages[@]}; do
     createBoilerplate $language $id $problemName $leetcodeProblemUrl
 done
 
-echo "\nCreated boilerplate successfully"
+echo "\n${GREEN}Created boilerplate successfully${NC}"
 
 exit 0
